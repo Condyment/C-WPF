@@ -36,7 +36,7 @@ namespace Program_1
         }
         public string LastName
         {
-            get { MessageBox.Show("RP");  return lastName; }
+            get {  return lastName; }
             set
             {
                 if ( lastName != value)
@@ -55,7 +55,8 @@ namespace Program_1
         public string FullName
         {
             get {
-                 return fullName=firstName+" "+lastName; }
+                MessageBox.Show("RP2");
+                return fullName=firstName+" "+lastName; }
             set
             {
                 if (fullName != value)
@@ -74,7 +75,10 @@ namespace Program_1
         private void onepropretychanged(string proprety)
         {
             if (PropertyChanged != null)
-            {
+            {if (proprety.Equals("FullName"))
+                    {
+                    MessageBox.Show("RP1");
+                }
                 
                 PropertyChanged(this,new PropertyChangedEventArgs(proprety));
 
